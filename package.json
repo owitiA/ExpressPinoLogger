@@ -1,0 +1,24 @@
+{
+  "name": "logger",
+  "version": "1.0.0",
+  "description": "a simple express pino logger ",
+  "main": "server.js",
+  "scripts": {
+    "test": "hi",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/owitiA/ExpressPinoLogger"
+  },
+  "keywords": [
+    "pino",
+    "express"
+  ],
+  "author": "OwitiA",
+  "license": "ISC",
+  "dependencies": {
+    "express-pino-logger": "^4.0.0",
+    "pino": "^5.10.6"
+  }
+}
