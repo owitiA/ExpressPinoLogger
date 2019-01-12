@@ -1,14 +1,15 @@
 import { resolve } from "path";
 //import { createLogger } from "pino";
-// use the ecpresspino logger serves the same as pino 
-import {createLogger} from "express-pino-logger";
+// use the expresspino logger serves the same as pino 
+//import {PinoWrapper} from "PinoWrapper";
+import pinoWrapper from "../pinowrapper";
 
 // favour using env variables to provide your code with external configs
 // it makes it a lot simpler when you want to change the configs
 const level = process.env.NODE_LOGGING_LEVEL || "info";
 
 
-const log = createLogger({
+const log = pinoWrapper({
   name: "myapp",
   streams: [
     {
@@ -17,7 +18,7 @@ const log = createLogger({
     },
     {
       level,
-      path: resolve(__dirname, "..", "..", "logs.json")
+      path: resolve(__dirname, "..", "..", "logs.json")// not a suitable method for production
     }
   ]
 });
